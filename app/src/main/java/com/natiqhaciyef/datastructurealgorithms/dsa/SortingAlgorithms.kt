@@ -1,15 +1,32 @@
 package com.natiqhaciyef.datastructurealgorithms.dsa
 
-class SortingAlgorithms {
-    fun selectionSorting(list: ArrayList<Int>): ArrayList<Int>{
-        val sortedList = arrayListOf<Int>()
-        val util = Util()
 
-        for(i in list.indices){
-            sortedList.add(util.findLessNumberFromList(list))
-            list.remove(util.findLessNumberFromList(list))
+fun ArrayList<Int>.selectionSort(): ArrayList<Int> {
+    val res = this
+
+    for (i in res.indices) {
+        var minIndex = i
+        for (j in i + 1 until res.size) {
+            if (res[j] < res[minIndex])
+                minIndex = j
+            val temp = res[minIndex]
+            res[minIndex] = res[i]
+            res[i] = temp
         }
-
-        return sortedList
     }
+    return res
+}
+
+fun ArrayList<Int>.bubbleSort(): ArrayList<Int> {
+    val res = this
+    for (i in res.indices) {
+        for (j in 0 until res.size - i - 1) {
+            if (res[j] > res[j + 1]) {
+                val temp = res[j]
+                res[j] = res[j + 1]
+                res[j + 1] = temp
+            }
+        }
+    }
+    return res
 }
