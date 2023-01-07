@@ -1,5 +1,6 @@
 package com.natiqhaciyef.datastructurealgorithms.dsa
 
+import com.natiqhaciyef.datastructurealgorithms.dsa.sorting.bubble.BubbleSortJava
 import com.natiqhaciyef.datastructurealgorithms.dsa.sorting.bubble.bubbleSort
 import com.natiqhaciyef.datastructurealgorithms.dsa.sorting.selection.selectionSort
 
@@ -8,4 +9,5 @@ fun main() {
     println("Sorted array")
     println(list.selectionSort())
     println(list.bubbleSort())
+    println(BubbleSortJava.bubbleSort(list))
 }
